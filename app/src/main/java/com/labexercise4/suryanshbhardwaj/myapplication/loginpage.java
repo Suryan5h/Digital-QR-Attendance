@@ -105,36 +105,40 @@ public class loginpage extends BaseActivity_Firebase implements View.OnClickList
         }
     }
 
-    private void createAccount(String email, String password, String admin_pass) {
+    private void createAccount(String email, String password,String admin_pass) {
         Log.d(TAG, "createAccount:" + email);
         if ((!validateForm())) {
-            if(admin_pass.equals("Suryansh")) {
-                Toast.makeText(loginpage.this, "Account can be made only by Admin", Toast.LENGTH_LONG).show();
-                return;
-            }
+            Toast.makeText(loginpage.this,"Invalid Email",Toast.LENGTH_SHORT).show();
+            return;
         }
         showProgressDialog();
 
+        if (admin_pass.equals("Suryansh")) {
 // [START create_user_with_email]
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
-                        Toast.makeText(loginpage.this,"Account Created Succesfully", Toast.LENGTH_SHORT).show();
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
-                        if (!task.isSuccessful()) {
-                            Toast.makeText(loginpage.this,"Auth_failed", Toast.LENGTH_SHORT).show();
-                        }
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
+                            Toast.makeText(loginpage.this, "Account Created Succesfully", Toast.LENGTH_SHORT).show();
+                            // If sign in fails, display a message to the user. If sign in succeeds
+                            // the auth state listener will be notified and logic to handle the
+                            // signed in user can be handled in the listener.
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(loginpage.this, "Auth_failed", Toast.LENGTH_SHORT).show();
+                            }
 
-                        // [START_EXCLUDE]
-                        hideProgressDialog();
-                        // [END_EXCLUDE]
-                    }
-                });
-        // [END create_user_with_email]
+                            // [START_EXCLUDE]
+                            hideProgressDialog();
+                            // [END_EXCLUDE]
+                        }
+                    });
+            // [END create_user_with_email]
+        }
+        else
+        {
+            Toast.makeText(loginpage.this,"Account can be created only by Admin",Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void signIn(String email, String password) {
