@@ -1,0 +1,169 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:tools = "http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height = "match_parent" android:paddingLeft= "@dimen/activity_horizontal_margin"
+    android:paddingRight = "@dimen/activity_horizontal_margin"
+    android:paddingTop = "@dimen/activity_vertical_margin"
+    android:paddingBottom = "@dimen/activity_vertical_margin" tools:context = ".loginpage"
+    android:background="@drawable/fathersday">
+
+    <Button
+        android:id="@+id/email_create_account_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_dark"
+        android:text="Create Account"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_toRightOf="@+id/imageView" />
+
+    <TextView android:text = "DIGITAL QR"
+        android:layout_width="wrap_content"
+        android:layout_height = "wrap_content"
+        android:id = "@+id/textview"
+        android:textSize = "35dp"
+        android:layout_alignParentTop = "true"
+        android:layout_centerHorizontal = "true"
+        android:textColor="@android:color/background_light"
+        android:fontFamily="casual"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/textview"
+        android:layout_toRightOf="@+id/textview"
+        android:textColor="@android:color/background_light"
+        android:text="0"/>
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="login"
+        android:id="@+id/button"
+        android:background="@android:color/holo_orange_dark"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2" />
+
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "ATTENDANCE"
+        android:id = "@+id/textView34"
+        android:textColor = "@android:color/background_light"
+        android:textSize = "35dp"
+        android:layout_below="@+id/textview"
+        android:layout_centerHorizontal="true"
+        android:textStyle="normal|bold"
+        android:fontFamily="casual" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:contentDescription="Icon"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:src="@mipmap/att"
+        android:adjustViewBounds="true"
+        android:maxWidth="82dp"
+        android:maxHeight="82dp"
+        android:scaleType="center"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/textView34"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignStart="@+id/editText2"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="21dp"
+        android:drawableLeft="@drawable/user"
+        android:drawableStart="@drawable/user"
+        android:focusable="true"
+        android:hint="Email"
+        android:maxLines="1"
+        android:textColorHighlight="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="?attr/colorControlNormal"
+        android:textSize="15dp" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editText"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:drawableStart="@drawable/lock"
+        android:drawableLeft="@drawable/lock"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:soundEffectsEnabled="false"
+        android:textColorHint="@android:color/background_light"
+        android:textColorLink="?attr/colorControlNormal"
+        android:textSize="15dp"
+        android:layout_toStartOf="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toLeftOf="@+id/textView3" />
+        <!-- android:password="false"   -->
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attempts Left:"
+        android:id="@+id/textView2"
+        android:textSize="25dp"
+        android:textColor="@android:color/background_light"
+        android:layout_marginBottom="21dp"
+        android:layout_above="@+id/button"
+        android:layout_alignLeft="@+id/check_admin"
+        android:layout_alignStart="@+id/check_admin" />
+
+    <EditText
+        android:id="@+id/check_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editText2"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_alignStart="@+id/editText2"
+        android:layout_below="@+id/editText2"
+        android:ems="10"
+        android:hint="Admin Password"
+        android:inputType="textPassword"
+        android:textSize="15dp"
+        android:textStyle="bold|italic" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:onClick="showadmin"
+        android:text="Admin"
+        android:layout_above="@+id/textView2"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_marginBottom="25dp" />
+
+</RelativeLayout>
