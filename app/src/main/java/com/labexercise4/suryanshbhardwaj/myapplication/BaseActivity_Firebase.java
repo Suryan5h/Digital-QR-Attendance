@@ -1,6 +1,8 @@
 package com.labexercise4.suryanshbhardwaj.myapplication;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.os.Handler;
 import android.support.annotation.VisibleForTesting;
 import android.support.v7.app.AppCompatActivity;
 
@@ -13,10 +15,12 @@ public class BaseActivity_Firebase extends AppCompatActivity {
         if (mProgressDialog == null) {
             mProgressDialog = new ProgressDialog(this);
             mProgressDialog.setMessage("loading");
-            mProgressDialog.setIndeterminate(true);
+            mProgressDialog.setIndeterminate(false);
+
         }
 
         mProgressDialog.show();
+        timerDelayRemoveDialog(5000,mProgressDialog);
     }
 
     public void hideProgressDialog() {
@@ -31,4 +35,11 @@ public class BaseActivity_Firebase extends AppCompatActivity {
         hideProgressDialog();
     }
 
+    public void timerDelayRemoveDialog(long time, final Dialog d){
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                d.dismiss();
+            }
+        }, time);
+    }
 }
